@@ -1,0 +1,4 @@
+[
+{"name":"Youtube TV","package":"com.google.android.youtube.tv","version":"1.0.0 (1)","installed":false,"apk":"https://example.com/youtube.apk"},
+{"name":"Aptoide TV","package":"cm.aptoidetv.pt","version":"5.1.2 (531)","installed":true,"apk":"https://example.com/aptoide.apk"}
+]

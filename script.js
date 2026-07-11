@@ -1,1 +1,19 @@
-fetch('apps.json').then(r=>r.json()).then(d=>{count.innerText='Có '+d.length+' ứng dụng.';list.innerHTML=d.map(a=>`<div class='card ${a.installed?'':'install'}'><div class='left'><h2>${a.name}</h2><p>${a.package}</p><p>${a.installed?'Đang cài':'Chưa cài đặt'} | Mới nhất: ${a.version}</p></div><div>${a.installed?`<button class='latestBtn'>Đã mới nhất</button> <button class='uninstallBtn'>Gỡ cài</button>`:`<button class='installBtn' onclick="location.href='${a.apk}'">Cài đặt</button>`}</div></div>`).join('')});refresh.onclick=()=>location.reload();
+fetch('apps.json').then(r=>r.json()).then(d=>{count.innerText='Có '+d.length+' ứng dụng.';list.innerHTML=d.map(a=>`<div class='card ${a.installed?'':'install'}' tabindex='0'><div class='left'><h2>${a.name}</h2><p>${a.package}</p><p>${a.installed?'Đang cài':'Chưa cài đặt'} | Mới nhất: ${a.version}</p></div><div>${a.installed?`<button class='latestBtn'>Đã mới nhất</button> <button class='uninstallBtn'>Gỡ cài</button>`:`<button class='installBtn' onclick="location.href='${a.apk}'">Cài đặt</button>`}</div></div>`).join('')});refresh.onclick=()=>location.reload();
+window.onload=function(){
+
+    let first=document.querySelector(".card");
+
+    if(first){
+        first.focus();
+    }
+
+}
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        document.activeElement.click();
+
+    }
+
+});
